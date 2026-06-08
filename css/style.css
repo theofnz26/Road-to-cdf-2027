@@ -1,0 +1,196 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background-image: url("../img/WCQ-hero-banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #222;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgba(31, 42, 68, 0.95);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 30px 20px;
+  flex: 1;
+}
+
+section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a,
+button {
+  background-color: #1f2a44;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover,
+a:hover {
+  background-color: #33466f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+}
+
+.deck-card,
+.event-card,
+.matchup {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-left: 5px solid #1f2a44;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.matchup-form {
+  margin-top: 15px;
+}
+
+footer {
+  background-color: rgba(31, 42, 68, 0.95);
+  color: white;
+  padding: 25px;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid white;
+}
+
+.footer-info {
+  flex: 1;
+}
+
+.footer-info h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.footer-info p {
+  margin: 8px 0;
+}
+
+.footer-info a {
+  color: #7ec8ff;
+}
+
+.portfolio-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: white;
+  color: #1f2a44;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.portfolio-button:hover {
+  background-color: #e6e6e6;
+  color: #1f2a44;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 25px auto 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+}
