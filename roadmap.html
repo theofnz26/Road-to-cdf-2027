@@ -3,53 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Road to CDF 2027 - Roadmap</title>
+  <title>Road to CDF 2027 - Decks</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Road to CDF 2027</h1>
+<header>
+  <h1>Decks et historique</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="roadmap.html">Decks</a>
+    <a href="events.html">Calendrier</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="roadmap.html">Roadmap</a>
-      <a href="events.html">Calendrier</a>
-    </nav>
-  </header>
+<main>
+  <section>
+    <h2>Progression vers le CDF 2027</h2>
+    <p id="cdfText">Calcul en cours...</p>
+    <progress id="cdfBar" value="0" max="100"></progress>
+  </section>
 
-  <main>
-    <section>
-  <h2>Progression vers le CDF 2027</h2>
+  <section>
+    <h2>Ajouter un deck</h2>
+    <form id="deckForm">
+      <label for="deckName">Nom du deck</label>
+      <input type="text" id="deckName" placeholder="Ex : Blue-Eyes">
+      <button type="submit">Ajouter le deck</button>
+    </form>
+    <div id="deckList"></div>
+  </section>
 
-  <p id="cdfProgressText">Calcul de la progression...</p>
+  <section>
+    <h2>Historique des duels</h2>
 
-  <progress id="cdfProgressBar" value="0" max="100"></progress>
-</section>
-    <section>
-      <h2>Ajouter un deck</h2>
+    <h3>Ajouter un match simple</h3>
+    <form id="simpleMatchForm">
+      <label for="simpleMyDeck">Mon deck</label>
+      <input type="text" id="simpleMyDeck" placeholder="Ex : Blue-Eyes">
 
-      <form id="deckForm">
-        <label for="deckName">Nom du deck</label>
-        <input type="text" id="deckName" placeholder="Ex : Blue-Eyes">
+      <label for="simpleOpponentDeck">Deck adverse</label>
+      <input type="text" id="simpleOpponentDeck" placeholder="Ex : Maliss">
 
-        <button type="submit">Ajouter le deck</button>
-      </form>
-    </section>
+      <label for="simpleResult">Résultat</label>
+      <select id="simpleResult">
+        <option value="Victoire">Victoire</option>
+        <option value="Défaite">Défaite</option>
+      </select>
 
-    <section>
-      <h2>Mes decks à travailler</h2>
+      <label for="simpleComment">Commentaire</label>
+      <textarea id="simpleComment" placeholder="Commentaire optionnel"></textarea>
 
-      <div id="deckList">
-        
-      </div>
-    </section>
-  </main>
+      <button type="submit">Ajouter le match</button>
+    </form>
 
-  <footer>
-    <p>Suivi de progression vers le CDF 2027</p>
-  </footer>
+    <h3>Ajouter un tournoi</h3>
+    <form id="tournamentForm">
+      <label for="tournamentName">Nom du tournoi</label>
+      <input type="text" id="tournamentName" placeholder="Ex : Local Valence">
 
-  <script src="js/script.js"></script>
+      <label for="tournamentDeck">Mon deck</label>
+      <input type="text" id="tournamentDeck" placeholder="Ex : Blue-Eyes">
+
+      <label for="tournamentRounds">Rounds joués</label>
+      <textarea id="tournamentRounds" placeholder="Ex : R1 Maliss Win - R2 Ryzeal Loose"></textarea>
+
+      <label for="tournamentComment">Commentaire</label>
+      <textarea id="tournamentComment" placeholder="Commentaire optionnel"></textarea>
+
+      <button type="submit">Ajouter le tournoi</button>
+    </form>
+
+    <div id="historyList"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <img src="img/photo-profil.jpg" alt="Photo de Théo Fernandez" class="profile-picture">
+
+    <div class="footer-info">
+      <h3>Projet réalisé par Théo Fernandez</h3>
+      <p>Étudiant en Développement Web et Web Mobile</p>
+      <p>Email : ton.mail@email.com</p>
+      <p>LinkedIn : <a href="#" target="_blank">Mon LinkedIn</a></p>
+      <a href="#" target="_blank" class="portfolio-button">Voir mon site personnel</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Théo Fernandez - Projet Road to CDF 2027.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -6,14 +6,11 @@ body {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-
   background-image: url("../img/WCQ-hero-banner.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
   color: #222;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -26,14 +23,10 @@ header {
   text-align: center;
 }
 
-nav {
-  margin-top: 15px;
-}
-
 nav a {
   color: white;
-  text-decoration: none;
   margin: 0 10px;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -56,21 +49,17 @@ section {
   border: 1px solid #ddd;
 }
 
-h1,
-h2,
-h3 {
-  margin-top: 0;
-}
-
 a,
 button {
   background-color: #1f2a44;
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
+  margin-top: 5px;
 }
 
 button:hover,
@@ -82,13 +71,19 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 input,
-select {
+select,
+textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+textarea {
+  min-height: 80px;
 }
 
 progress {
@@ -96,19 +91,28 @@ progress {
   height: 20px;
 }
 
+.card,
 .deck-card,
-.event-card,
-.matchup {
+.event-card {
   background-color: #f9f9f9;
-  border: 1px solid #ddd;
   border-left: 5px solid #1f2a44;
   padding: 15px;
   margin-top: 15px;
   border-radius: 5px;
 }
 
-.matchup-form {
-  margin-top: 15px;
+.green {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.red {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 footer {
@@ -121,7 +125,6 @@ footer {
 .footer-content {
   max-width: 1000px;
   margin: auto;
-
   display: flex;
   align-items: center;
   gap: 30px;
@@ -140,11 +143,6 @@ footer {
   flex: 1;
 }
 
-.footer-info h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
 .footer-info p {
   margin: 8px 0;
 }
@@ -154,19 +152,9 @@ footer {
 }
 
 .portfolio-button {
-  display: inline-block;
-  margin-top: 10px;
   background-color: white;
   color: #1f2a44;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
   font-weight: bold;
-}
-
-.portfolio-button:hover {
-  background-color: #e6e6e6;
-  color: #1f2a44;
 }
 
 .footer-bottom {

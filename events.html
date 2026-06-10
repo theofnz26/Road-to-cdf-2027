@@ -8,69 +8,62 @@
 </head>
 <body>
 
-  <header>
-    <h1>Calendrier des événements</h1>
+<header>
+  <h1>Calendrier</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="roadmap.html">Decks</a>
+    <a href="events.html">Calendrier</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="roadmap.html">Roadmap</a>
-      <a href="events.html">Calendrier</a>
-    </nav>
-  </header>
+<main>
+  <section>
+    <h2>Ajouter un événement</h2>
 
-  <main>
-    <section>
-      <h2>Mes événements à venir</h2>
+    <form id="eventForm">
+      <label for="eventDate">Date</label>
+      <input type="date" id="eventDate">
 
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Événement</th>
-            <th>Deck prévu</th>
-          </tr>
-        </thead>
+      <label for="eventType">Type</label>
+      <select id="eventType">
+        <option value="Tournoi">Tournoi</option>
+        <option value="Entraînement">Entraînement</option>
+        <option value="Régional">Régional</option>
+        <option value="Autre">Autre</option>
+      </select>
 
-        <tbody>
-          <tr>
-            <td>15 juin</td>
-            <td>Tournoi</td>
-            <td>Local boutique</td>
-            <td>Blue-Eyes</td>
-          </tr>
+      <label for="eventName">Nom de l'événement</label>
+      <input type="text" id="eventName" placeholder="Ex : Local boutique">
 
-          <tr>
-            <td>22 juin</td>
-            <td>Entraînement</td>
-            <td>Testing matchups</td>
-            <td>Maliss</td>
-          </tr>
+      <label for="eventDeck">Deck prévu</label>
+      <input type="text" id="eventDeck" placeholder="Ex : Blue-Eyes">
 
-          <tr>
-            <td>6 juillet</td>
-            <td>Régional</td>
-            <td>Tournoi régional</td>
-            <td>À définir</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+      <button type="submit">Ajouter l'événement</button>
+    </form>
 
-    <section>
-      <h2>Légende</h2>
+    <div id="eventList"></div>
+  </section>
+</main>
 
-      <ul>
-        <li>Tournoi : événement compétitif local</li>
-        <li>Entraînement : session de test</li>
-        <li>Régional : événement important</li>
-      </ul>
-    </section>
-  </main>
+<footer>
+  <div class="footer-content">
+    <img src="img/photo-profil.jpg" alt="Photo de Théo Fernandez" class="profile-picture">
 
-  <footer>
-    <p>Calendrier de préparation compétitive</p>
-  </footer>
+    <div class="footer-info">
+      <h3>Projet réalisé par Théo Fernandez</h3>
+      <p>Étudiant en Développement Web et Web Mobile</p>
+      <p>Email : ton.mail@email.com</p>
+      <p>LinkedIn : <a href="#" target="_blank">Mon LinkedIn</a></p>
+      <a href="#" target="_blank" class="portfolio-button">Voir mon site personnel</a>
+    </div>
+  </div>
 
+  <div class="footer-bottom">
+    <p>© 2026 Théo Fernandez - Projet Road to CDF 2027.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
