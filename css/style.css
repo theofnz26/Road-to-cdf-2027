@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
@@ -120,8 +126,8 @@ a:hover {
 
 .home-card img {
   display: block;
-  width: 250px;
-  max-width: 160%;
+  width: 100%;
+  max-width: 250px;
   height: 160px;
   object-fit: contain;
   margin: 0 auto 15px auto;
@@ -259,5 +265,21 @@ footer {
     width: 100px;
     height: 100px;
     margin-top: 10px;
+  }
+
+  /* Les cartes de l'index passent en colonne et se centrent */
+  .home-cards {
+    flex-direction: column;
+  }
+
+  .home-card {
+    text-align: center;
+  }
+
+  /* Le footer passe en colonne et se centre */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
 }
