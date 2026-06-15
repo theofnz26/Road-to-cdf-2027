@@ -2,7 +2,12 @@ html,
 body {
   height: 100%;
 }
-
+.index-logo {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto 25px;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
