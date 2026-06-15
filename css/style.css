@@ -231,6 +231,12 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
+  /* Sur mobile (surtout iOS Safari), background-attachment: fixed
+     provoque des bugs d'affichage : on repasse en scroll. */
+  body {
+    background-attachment: scroll;
+  }
+
   .site-header {
     flex-direction: column;
     padding: 20px;
