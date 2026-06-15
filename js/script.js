@@ -40,9 +40,16 @@ if (deckForm) {
     const deckCard = document.createElement("article");
     deckCard.classList.add("deck-card");
 
-    deckCard.innerHTML = `
-      <h3>${deckName}</h3>
+    // Le nom du deck est saisi par l'utilisateur :
+    // on l'affiche avec textContent pour éviter toute injection (XSS).
+    const deckTitle = document.createElement("h3");
+    deckTitle.textContent = deckName;
+    deckCard.appendChild(deckTitle);
 
+    // Ce formulaire ne contient AUCUNE donnée utilisateur (texte écrit par nous),
+    // donc innerHTML est sans risque ici.
+    const matchupZone = document.createElement("div");
+    matchupZone.innerHTML = `
       <form class="matchup-form">
         <input type="text" placeholder="Deck adverse">
         <select>
@@ -54,6 +61,7 @@ if (deckForm) {
 
       <div class="matchup-list"></div>
     `;
+    deckCard.appendChild(matchupZone);
 
     deckList.appendChild(deckCard);
     deckForm.reset();
@@ -108,13 +116,21 @@ if (simpleMatchForm) {
     const matchCard = document.createElement("article");
     matchCard.classList.add("card");
 
-    matchCard.innerHTML = `
-      <h3>Match simple</h3>
-      <p><strong>${myDeck}</strong> vs <strong>${opponentDeck}</strong></p>
-      <p>Résultat : ${result}</p>
-      <p>Commentaire : ${comment}</p>
-    `;
+    // Toutes les données ci-dessous viennent de l'utilisateur :
+    // on les affiche avec textContent (jamais innerHTML).
+    const titre = document.createElement("h3");
+    titre.textContent = "Match simple";
 
+    const ligneDecks = document.createElement("p");
+    ligneDecks.textContent = myDeck + " vs " + opponentDeck;
+
+    const ligneResultat = document.createElement("p");
+    ligneResultat.textContent = "Résultat : " + result;
+
+    const ligneCommentaire = document.createElement("p");
+    ligneCommentaire.textContent = "Commentaire : " + comment;
+
+    matchCard.append(titre, ligneDecks, ligneResultat, ligneCommentaire);
     historyList.appendChild(matchCard);
     simpleMatchForm.reset();
   });
@@ -137,14 +153,20 @@ if (tournamentForm) {
     const tournamentCard = document.createElement("article");
     tournamentCard.classList.add("card");
 
-    tournamentCard.innerHTML = `
-      <h3>${name}</h3>
-      <p><strong>Deck joué :</strong> ${deck}</p>
-      <p><strong>Rounds :</strong></p>
-      <p>${rounds}</p>
-      <p><strong>Commentaire :</strong> ${comment}</p>
-    `;
+    // Données saisies par l'utilisateur -> textContent (sécurité anti-XSS).
+    const titre = document.createElement("h3");
+    titre.textContent = name;
 
+    const ligneDeck = document.createElement("p");
+    ligneDeck.textContent = "Deck joué : " + deck;
+
+    const ligneRounds = document.createElement("p");
+    ligneRounds.textContent = "Rounds : " + rounds;
+
+    const ligneCommentaire = document.createElement("p");
+    ligneCommentaire.textContent = "Commentaire : " + comment;
+
+    tournamentCard.append(titre, ligneDeck, ligneRounds, ligneCommentaire);
     historyList.appendChild(tournamentCard);
     tournamentForm.reset();
   });
@@ -170,13 +192,20 @@ if (eventForm) {
     const eventCard = document.createElement("article");
     eventCard.classList.add("event-card");
 
-    eventCard.innerHTML = `
-      <h3>${name}</h3>
-      <p>Date : ${date}</p>
-      <p>Type : ${type}</p>
-      <p>Deck prévu : ${deck}</p>
-    `;
+    // Données saisies par l'utilisateur -> textContent (sécurité anti-XSS).
+    const titre = document.createElement("h3");
+    titre.textContent = name;
 
+    const ligneDate = document.createElement("p");
+    ligneDate.textContent = "Date : " + date;
+
+    const ligneType = document.createElement("p");
+    ligneType.textContent = "Type : " + type;
+
+    const ligneDeck = document.createElement("p");
+    ligneDeck.textContent = "Deck prévu : " + deck;
+
+    eventCard.append(titre, ligneDate, ligneType, ligneDeck);
     eventList.appendChild(eventCard);
     eventForm.reset();
   });
