@@ -30,7 +30,9 @@ if (deckForm) {
   deckForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const deckName = document.getElementById("deckName").value;
+    // .trim() enlève les espaces au début et à la fin :
+    // un nom composé uniquement d'espaces devient "" et sera refusé.
+    const deckName = document.getElementById("deckName").value.trim();
 
     if (deckName === "") {
       alert("Veuillez entrer un nom de deck.");
@@ -72,7 +74,7 @@ if (deckForm) {
     matchupForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const matchupName = matchupForm.querySelector("input").value;
+      const matchupName = matchupForm.querySelector("input").value.trim();
       const status = matchupForm.querySelector("select").value;
 
       if (matchupName === "") {
@@ -103,10 +105,10 @@ if (simpleMatchForm) {
   simpleMatchForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const myDeck = document.getElementById("simpleMyDeck").value;
-    const opponentDeck = document.getElementById("simpleOpponentDeck").value;
+    const myDeck = document.getElementById("simpleMyDeck").value.trim();
+    const opponentDeck = document.getElementById("simpleOpponentDeck").value.trim();
     const result = document.getElementById("simpleResult").value;
-    const comment = document.getElementById("simpleComment").value;
+    const comment = document.getElementById("simpleComment").value.trim();
 
     if (myDeck === "" || opponentDeck === "") {
       alert("Veuillez remplir les decks.");
@@ -140,10 +142,10 @@ if (tournamentForm) {
   tournamentForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const name = document.getElementById("tournamentName").value;
-    const deck = document.getElementById("tournamentDeck").value;
-    const rounds = document.getElementById("tournamentRounds").value;
-    const comment = document.getElementById("tournamentComment").value;
+    const name = document.getElementById("tournamentName").value.trim();
+    const deck = document.getElementById("tournamentDeck").value.trim();
+    const rounds = document.getElementById("tournamentRounds").value.trim();
+    const comment = document.getElementById("tournamentComment").value.trim();
 
     if (name === "" || deck === "" || rounds === "") {
       alert("Veuillez remplir le tournoi.");
@@ -181,8 +183,8 @@ if (eventForm) {
 
     const date = document.getElementById("eventDate").value;
     const type = document.getElementById("eventType").value;
-    const name = document.getElementById("eventName").value;
-    const deck = document.getElementById("eventDeck").value;
+    const name = document.getElementById("eventName").value.trim();
+    const deck = document.getElementById("eventDeck").value.trim();
 
     if (date === "" || name === "" || deck === "") {
       alert("Veuillez remplir tous les champs.");
